@@ -4,23 +4,27 @@ public class Main {
 
     //Задача 1
     public static void checkingYearHighness(int year) {
-        if ((year % 4 == 0 && year % 100 != 0) || (year % 100 == 0 && year % 400 == 0)) {
+        if ((year % 4 == 0 && year % 100 != 0)) {
             System.out.println("Год високосный.\n");
-        } else {
+        }
+        else if (year % 100 == 0 && year % 400 == 0){
+            System.out.println("Год високосный.\n");
+        }
+        else {
             System.out.println("Год невисокосный.\n");
         }
     }
 
     //Задача 2
-    public static void examinationOS(int currentYear, int clientOS) {
+    public static void choiceOS(int creationDeviceYear, int clientOS) {
         int clientDeviceYear = 2015;
-        if (clientOS == 0 && currentYear < clientDeviceYear) {
+        if (clientOS == 0 && creationDeviceYear < clientDeviceYear) {
             System.out.println("Установите облегченную версию " +
                     "приложения для IOS по ссылке.\n");
         } else if (clientOS == 0) {
             System.out.println("Установите версию " +
                     "приложения для IOS по ссылке.\n");
-        } else if (clientOS == 1 && currentYear < clientDeviceYear) {
+        } else if (clientOS == 1 && creationDeviceYear < clientDeviceYear) {
 
             System.out.println("Установите облегченную версию приложения для Android " +
                     "по ссылке.\n");
@@ -34,13 +38,13 @@ public class Main {
 
 
     //Задача 3
-    public static int calculateNumberDaysDelivery(int deliveryDistance) {
+    public static double calculateNumberDaysDelivery(int deliveryDistance) {
         if (deliveryDistance < 20) {
-            return 24;
+            return 1;
         } else if (deliveryDistance <= 60) {
-            return 36;
+            return 1.5;
         } else if (deliveryDistance <= 100) {
-            return 48;
+            return 2;
         } else {
             System.out.print("Доставка не доступна.\n");
             return -1;
@@ -55,9 +59,9 @@ public class Main {
 
         //Задача 2
         System.out.println("Задача 2:");
-        int currentYear = LocalDate.now().getYear();
+        int creationDeviceYear = LocalDate.now().getYear();
         int clientOS = 0;
-        examinationOS(currentYear, clientOS);
+        choiceOS(creationDeviceYear, clientOS);
 
         //Задача 3
         System.out.println("Задача 3:");
